@@ -1,5 +1,30 @@
 import java.util.*;
 
+// Approach in solution 1:
+// We are taking two hashmaps and maintain mapping of each character of str1 -> str2
+// loop over first string and map each character of str1 to str2
+// loop over second string and map each character of str2 to str1
+// if the character is already mapped then check if the mapped character is equal to the current character in another string 
+//    - If yes, then we move ahead otherwise it's not isomorphic string
+// We repeat this process while looping over str2
+// Time complexity: O(2N) -> O(N). Since this is two pass approach time complexity would be O(2N) but since constant does not matter it would be O(N)
+// Space complexity: O(2 * 26) -> O(1). Since, we can only store at max 26 characters in each hashmap thus space would be O(1)
+
+
+// Approach in solution 2:
+// We are using HashMap and HashSet
+// Note the time and space complexity in this approach woudln't change
+// Even if we are using Single HashMap in approach 1, still the space complexity would be same and time too.
+
+// In apporach two
+// We check if current character in str1 is mapped to current character in str2 and is present in HashMap
+// If it's present in HashMap
+//      Check if character that current character in Str1 in mapped to is equal to str2's current character, if not then it's not isomorphic
+// If it's not present in Hashmap
+//      Check if it's present in hashset which means the character is already mapped to something that would mean it's not isomorphic
+//      Otherwise just add the character to Hashmap and Hashset
+
+
 // Solution with two hashMaps
 // With Using two loops and using single loop
 class Solution1 {
